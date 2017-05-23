@@ -1,10 +1,9 @@
-// webpack.config.js
 var path = require('path');
 
 module.exports = {
   entry: './frontend/as_seen.jsx',
   output: {
-    filename: './bundle.js',
+    filename: 'bundle.js',
   },
   module: {
     loaders: [
