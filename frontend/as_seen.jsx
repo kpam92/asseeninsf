@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
   window.store = store;
   window.fetchLocations = fetchLocations;
+  window.fetchLocations = fetchLocations;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });
