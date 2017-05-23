@@ -8,7 +8,12 @@ export const receiveLocations = locations => ({
 });
 
 export const fetchLocations = () => dispatch => (
-  APIUtil.fetchLocations(filters).then(locations => (
-    dispatch(receiveLocations(locations))
+  APIUtil.retrieveLocations().then(locations => (
+    dispatch(saveLocations(locations))
   ))
+);
+
+export const saveLocations = (locations) => dispatch => (
+  APIUtil.saveLocations(locations)
+    .then(locations => dispatch(receiveLocations(locations)))
 );

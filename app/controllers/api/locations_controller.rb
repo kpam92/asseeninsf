@@ -4,21 +4,21 @@ class Api::LocationsController < ApplicationController
     @locations = Location.all
   end
 
-  def create
-    new_params = parse_params(location_params)
-    @location = Location.new(new_params)
-    if @location.save
-      render "api/locations/show"
-    else
-      @errors = @location.errors.full_messages
-      render(
-        "api/shared/error",
-        status: 422
-      )
-    end
-  end
+  # def create
+  #   new_params = parse_params(location_params)
+  #   @location = Location.new(new_params)
+  #   if @location.save
+  #     render "api/locations/show"
+  #   else
+  #     @errors = @location.errors.full_messages
+  #     render(
+  #       "api/shared/error",
+  #       status: 422
+  #     )
+  #   end
+  # end
 
-  def seed
+  def create
     @locations = seed_params.values.map{|location|
       parse_params(location)
     }
