@@ -7,18 +7,11 @@ const LocationsReducer = (state = {}, action) => {
   let newState = merge({}, state);
 
   switch(action.type) {
-    case RECEIVE_BENCHES:
-      return action.benches;
-    case RECEIVE_BENCH:
-      const newBench = {[action.bench.id]: action.bench};
-      return merge({}, state, newBench);
-    case RECEIVE_REVIEW:
-      const review = action.review;
-      newState[review.bench_id].reviews.push(review)
-      return newState;
+    case RECEIVE_LOCATIONS:
+      return action.locations;
     default:
       return state;
   }
 };
 
-export default BenchesReducer;
+export default LocationsReducer;
