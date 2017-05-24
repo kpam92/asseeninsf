@@ -1,5 +1,5 @@
 
-export const retrieveLocations = () => {
+export const retrieveAPILocations = () => {
   return $.ajax({
     method: 'GET' ,
     url: 'https://data.sfgov.org/resource/wwmu-gmzc.json',
@@ -13,5 +13,12 @@ export const saveLocations = (locations) => {
     url: 'api/locations',
     error: (err) => console.log(err),
     data: { locations: locations }
+  })
+}
+
+export const fetchLocations = () => {
+  return $.ajax({
+    method: 'GET' ,
+    url: 'api/locations'
   })
 }

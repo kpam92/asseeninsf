@@ -3,13 +3,14 @@ import configureStore from './store/store';
 import Root from './components/root';
 import React from 'react';
 import { retrieveLocations, saveLocations } from './util/location_api_util';
-import { receiveLocations } from './actions/location_actions';
+import { receiveLocations, fetchLocations} from './actions/location_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
   window.store = store;
   window.retrieveLocations = retrieveLocations;
+  window.fetchLocations = fetchLocations;
   window.receiveLocations = receiveLocations;
   window.saveLocations = saveLocations;
   const root = document.getElementById('root');
