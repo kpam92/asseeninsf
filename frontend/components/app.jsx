@@ -20,7 +20,7 @@ const App = () => (
       </Link>
 
     </header>
-
+      
       <Route exact path="/" component={ SearchContainer } />
   </div>
 );
