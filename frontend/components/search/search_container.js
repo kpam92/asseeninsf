@@ -1,4 +1,4 @@
-import LocationIndex from './location_index';
+import Search from './search';
 import { connect } from 'react-redux';
 
 import { fetchLocations } from '../../actions/location_actions';
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LocationIndex);
+)(Search);

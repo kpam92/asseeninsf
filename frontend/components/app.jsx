@@ -8,7 +8,7 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-import LocationIndexContainer from './location/location_index_container';
+import SearchContainer from './search/search_container';
 
 
 const App = () => (
@@ -17,10 +17,10 @@ const App = () => (
       <Link to="/" className="header-link">
         <h1>As Seen in SF</h1>
       </Link>
-      
+
     </header>
 
-      <Route exact path="/" component={ LocationIndexContainer } />
+      <Route exact path="/" component={ SearchContainer } />
   </div>
 );
 
