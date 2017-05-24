@@ -22,12 +22,13 @@ export default class MarkerManager {
   createMarkerFromLocation(location) {
     // debugger;
     // const geocoder = new google.maps.Geocoder();
-    const position1 = this.geocodeAddress(this.geocoder, location.locations);
-    // debugger;
-    // const position = new google.maps.LatLng(initial['lat'],initial['lng']);
-    // const position = new google.maps.LatLng(37.7906652, -122.3913878);
+    // const position = this.geocodeAddress(this.geocoder, location.locations);
+    // console.log(position)
+    // // debugger;
+    // // const position = new google.maps.LatLng(initial['lat'],initial['lng']);
+    const position = new google.maps.LatLng(37.7906652, -122.3913878);
     const marker = new google.maps.Marker({
-      position,
+      position: position,
       map: this.map,
       locationId: location.id
     });
@@ -42,12 +43,12 @@ export default class MarkerManager {
       geocoder.geocode({'address': location}, function(results, status) {
 
         if (status === 'OK') {
-          debugger;
+          // debugger;
           return (results[0].geometry.location);
         } else {
-          debugger;
-          console.log('hwat')
-          return new google.maps.LatLng(37.7906652, -122.3913878);
+
+          // debugger;
+          // return new google.maps.LatLng(37.7906652, -122.3913878);
         }
       });
     }
