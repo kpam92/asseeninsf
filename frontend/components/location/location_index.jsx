@@ -10,8 +10,16 @@ class LocationIndex extends React.Component {
   }
 
   render() {
+    const { locations } = this.props;
+    const locationDetails = this.props.locations.map(location => (
+        <h1>{location.title}</h1>
+
+      )
+    );
     return(
-      <h1>hi from index</h1>
+      <div>
+        {locationDetails}
+      </div>
     )
   }
 };
