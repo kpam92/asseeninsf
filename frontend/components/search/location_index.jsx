@@ -12,7 +12,7 @@ class LocationIndex extends React.Component {
   render() {
     const { locations } = this.props;
     const locationDetails = this.props.locations.map(location => (
-        <li>{location.title}</li>
+        <li key={location.id}>{location.title}</li>
 
       )
     );
