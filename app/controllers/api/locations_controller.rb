@@ -1,22 +1,8 @@
 class Api::LocationsController < ApplicationController
 
   def index
-    @locations = Location.all
+    @locations = Location.where(['locations IS NOT NULL'])
   end
-
-  # def create
-  #   new_params = parse_params(location_params)
-  #   @location = Location.new(new_params)
-  #   if @location.save
-  #     render "api/locations/show"
-  #   else
-  #     @errors = @location.errors.full_messages
-  #     render(
-  #       "api/shared/error",
-  #       status: 422
-  #     )
-  #   end
-  # end
 
   def create
     @locations = seed_params.values.map{|location|
@@ -27,7 +13,7 @@ class Api::LocationsController < ApplicationController
       if @location.save
         true
       else
-        @location.errors.full_messages
+        next
       end
     }
 

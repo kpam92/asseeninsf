@@ -12,6 +12,6 @@ export const saveLocations = (locations) => {
     method: 'POST' ,
     url: 'api/locations',
     error: (err) => console.log(err),
-    locations
+    data: { locations: locations }
   })
 }
