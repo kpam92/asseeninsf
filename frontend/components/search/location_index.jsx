@@ -12,13 +12,15 @@ class LocationIndex extends React.Component {
   render() {
     const { locations } = this.props;
     const locationDetails = this.props.locations.map(location => (
-        <h1>{location.title}</h1>
+        <li>{location.title}</li>
 
       )
     );
     return(
       <div>
-        {locationDetails}
+        <ul>
+          {locationDetails}
+        </ul>
       </div>
     )
   }
