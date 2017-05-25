@@ -19,38 +19,20 @@ export default class MarkerManager {
       .forEach((locationId) => this.removeMarker(this.markers[locationId]))
   }
 
-  createMarkerFromLocation(location) {
-    // debugger;
-    // const geocoder = new google.maps.Geocoder();
-    // const position = this.geocodeAddress(this.geocoder, location.locations);
-    // console.log(position)
-    // // debugger;
-    // // const position = new google.maps.LatLng(initial['lat'],initial['lng']);
-    // const position = new google.maps.LatLng(37.7906652, -122.3913878);
-    // const marker = new google.maps.Marker({
-    //   position: position,
-    //   map: this.map,
-    //   locationId: location.id
-    // });
-    // // debugger;
-    //
-    // marker.addListener('click', () => this.handleClick(location));
-    // this.markers[marker.locationId] = marker;
+  createMarkerFromLocation(Location) {
+    const position = new google.maps.LatLng(Location.latitude, Location.longitude);
+    const marker = new google.maps.Marker({
+      position,
+      map: this.map,
+      LocationId: Location.id
+    });
+
+    marker.addListener('click', () => this.handleClick(Location));
+    this.markers[marker.LocationId] = marker;
   }
 
-  geocodeAddress(geocoder, location) {
-
-      geocoder.geocode({'address': location}, function(results, status) {
-
-        if (status === 'OK') {
-          // debugger;
-          return (results[0].geometry.location);
-        } else {
-
-          // debugger;
-          // return new google.maps.LatLng(37.7906652, -122.3913878);
-        }
-      });
-    }
-
+  removeMarker(marker) {
+    this.markers[marker.LocationId].setMap(null);
+    delete this.markers[marker.LocationId];
+  }
 }
