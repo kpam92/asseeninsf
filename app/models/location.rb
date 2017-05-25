@@ -5,7 +5,7 @@
 
 class Location < ActiveRecord::Base
 
-  
+
 
   geocoded_by :locations
   after_validation :geocode
@@ -17,5 +17,12 @@ class Location < ActiveRecord::Base
       self.longitude = results[1]
       self.save
     end
+  end
+
+  def self.in_bounds(bounds)
+    self.where("lat < ?", bounds[:northEast][:lat])
+        .where("lat > ?", bounds[:southWest][:lat])
+        .where("lng > ?", bounds[:southWest][:lng])
+        .where("lng < ?", bounds[:northEast][:lng])
   end
 end
