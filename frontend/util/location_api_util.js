@@ -16,7 +16,7 @@ export const saveLocations = (locations) => {
   })
 }
 
-export const fetchLocations = () => {
+export const fetchLocations = (bounds) => {
   return $.ajax({
     method: 'GET' ,
     url: 'api/locations'
