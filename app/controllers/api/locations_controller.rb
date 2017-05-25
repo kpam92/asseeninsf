@@ -46,4 +46,9 @@ class Api::LocationsController < ApplicationController
       fun_facts: foreign[:fun_facts]
     }
   end
+  
+  def bounds
+    params[:bounds]
+  end
+
 end

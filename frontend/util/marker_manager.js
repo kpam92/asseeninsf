@@ -20,7 +20,6 @@ export default class MarkerManager {
   }
 
   createMarkerFromLocation(location) {
-    debugger;
     const position = new google.maps.LatLng(location.latitude, location.longitude);
     const marker = new google.maps.Marker({
       position,
