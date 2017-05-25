@@ -4,7 +4,7 @@ import FilterReducer from './filter_reducer';
 
 const rootReducer = combineReducers({
   locations: LocationsReducer,
-  bounds: FilterReducer
+  filters: FilterReducer
 });
 
 export default rootReducer;
