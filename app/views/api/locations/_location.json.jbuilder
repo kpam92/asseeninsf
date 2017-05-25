@@ -1,5 +1,5 @@
 json.extract! location, :id, :title, :actor_1, :actor_2, :director,
-  :fun_facts, :locations, :release_year
+  :fun_facts, :locations, :release_year, :latitude, :longitude
 
 
   # create_table "locations", force: :cascade do |t|

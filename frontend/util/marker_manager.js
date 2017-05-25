@@ -19,16 +19,17 @@ export default class MarkerManager {
       .forEach((locationId) => this.removeMarker(this.markers[locationId]))
   }
 
-  createMarkerFromLocation(Location) {
-    const position = new google.maps.LatLng(Location.latitude, Location.longitude);
+  createMarkerFromLocation(location) {
+    debugger;
+    const position = new google.maps.LatLng(location.latitude, location.longitude);
     const marker = new google.maps.Marker({
       position,
       map: this.map,
-      LocationId: Location.id
+      locationId: location.id
     });
 
-    marker.addListener('click', () => this.handleClick(Location));
-    this.markers[marker.LocationId] = marker;
+    marker.addListener('click', () => this.handleClick(location));
+    this.markers[marker.locationId] = marker;
   }
 
   removeMarker(marker) {

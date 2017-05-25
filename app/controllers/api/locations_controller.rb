@@ -1,7 +1,7 @@
 class Api::LocationsController < ApplicationController
 
   def index
-    @locations = Location.where(['locations IS NOT NULL']).limit(10)
+    @locations = Location.where(['latitude IS NOT NULL'])
   end
 
   def create
@@ -42,7 +42,7 @@ class Api::LocationsController < ApplicationController
       director: foreign[:director],
       title: foreign[:title],
       release_year: foreign[:release_year],
-      locations: foreign[:locations],
+      locations: foreign[:locations] + ',San Francisco, CA',
       fun_facts: foreign[:fun_facts]
     }
   end
