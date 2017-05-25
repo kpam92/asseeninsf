@@ -26,16 +26,16 @@ export default class MarkerManager {
     // console.log(position)
     // // debugger;
     // // const position = new google.maps.LatLng(initial['lat'],initial['lng']);
-    const position = new google.maps.LatLng(37.7906652, -122.3913878);
-    const marker = new google.maps.Marker({
-      position: position,
-      map: this.map,
-      locationId: location.id
-    });
-    // debugger;
-
-    marker.addListener('click', () => this.handleClick(location));
-    this.markers[marker.locationId] = marker;
+    // const position = new google.maps.LatLng(37.7906652, -122.3913878);
+    // const marker = new google.maps.Marker({
+    //   position: position,
+    //   map: this.map,
+    //   locationId: location.id
+    // });
+    // // debugger;
+    //
+    // marker.addListener('click', () => this.handleClick(location));
+    // this.markers[marker.locationId] = marker;
   }
 
   geocodeAddress(geocoder, location) {

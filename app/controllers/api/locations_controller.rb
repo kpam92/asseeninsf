@@ -1,7 +1,7 @@
 class Api::LocationsController < ApplicationController
 
   def index
-    @locations = Location.where(['locations IS NOT NULL'])
+    @locations = Location.where(['locations IS NOT NULL']).limit(10)
   end
 
   def create
