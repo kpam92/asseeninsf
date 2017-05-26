@@ -27,6 +27,7 @@ class LocationMap extends React.Component {
 
     componentDidUpdate() {
       this.MarkerManager.updateMarkers(this.props.locations);
+      this.registerListeners();
     }
 
     registerListeners() {

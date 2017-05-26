@@ -16,9 +16,10 @@ export const saveLocations = (locations) => {
   })
 }
 
-export const fetchLocations = (bounds) => {
+export const fetchLocations = (data) => {
   return $.ajax({
     method: 'GET' ,
-    url: 'api/locations'
+    url: 'api/locations',
+    data
   })
 }

@@ -19,8 +19,8 @@ export const saveLocations = (locations) => dispatch => (
 );
 
 
-export const fetchLocations = () => dispatch => (
-  APIUtil.fetchLocations().then(locations => (
+export const fetchLocations = (filters) => dispatch => (
+  APIUtil.fetchLocations(filters).then(locations => (
     dispatch(receiveLocations(locations))
   ))
 );

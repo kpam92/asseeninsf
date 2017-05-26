@@ -7,7 +7,7 @@ const Search = ({ locations, fetchLocations, updateBounds, updateFilter }) => (
   <div className="user-pane">
     <div className="left-half">
       <LocationMap locations={locations}  updateBounds={updateBounds} updateFilter={updateFilter}/>
-      <LocationIndex locations={locations} fetchLocations={fetchLocations}/>
+      <LocationIndex locations={locations}/>
     </div>
   </div>
 );
