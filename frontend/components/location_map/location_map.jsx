@@ -13,7 +13,7 @@ const mapOptions = {
     lat: 37.773972,
     lng: -122.431297
   }, // San Francisco coords
-  zoom: 12
+  zoom: 13
 };
 
 class LocationMap extends React.Component {
@@ -38,22 +38,22 @@ class LocationMap extends React.Component {
           southWest: { lat: south, lng: west } };
         this.props.updateFilter('bounds', bounds);
       });
-      google.maps.event.addListener(this.map, 'click', (event) => {
-        const coords = getCoordsObj(event.latLng);
-        this.handleClick(coords);
-      });
+      // google.maps.event.addListener(this.map, 'click', (event) => {
+      //   const coords = getCoordsObj(event.latLng);
+      //   this.handleClick(coords);
+      // });
     }
 
     handleMarkerClick(location) {
       this.props.history.push(`locations/${location.id}`);
     }
 
-    handleClick(coords) {
-      this.props.history.push({
-        pathname: 'locations/new',
-        search: `lat=${coords.lat}&lng=${coords.lng}`
-      });
-    }
+    // handleClick(coords) {
+    //   this.props.history.push({
+    //     pathname: 'locations/new',
+    //     search: `lat=${coords.lat}&lng=${coords.lng}`
+    //   });
+    // }
 
   render(){
     return (

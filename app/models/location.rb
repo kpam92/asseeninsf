@@ -20,9 +20,9 @@ class Location < ActiveRecord::Base
   end
 
   def self.in_bounds(bounds)
-    self.where("lat < ?", bounds[:northEast][:lat])
-        .where("lat > ?", bounds[:southWest][:lat])
-        .where("lng > ?", bounds[:southWest][:lng])
-        .where("lng < ?", bounds[:northEast][:lng])
+    self.where("latitude < ?", bounds[:northEast][:lat])
+        .where("latitude > ?", bounds[:southWest][:lat])
+        .where("longitude > ?", bounds[:southWest][:lng])
+        .where("longitude < ?", bounds[:northEast][:lng])
   end
 end

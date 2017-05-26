@@ -4,7 +4,7 @@ export default class MarkerManager {
     this.map = map;
     this.markers = {};
     this.handleClick = handleClick;
-    this.geocoder = new google.maps.Geocoder();
+    
   }
 
   updateMarkers(locations){
