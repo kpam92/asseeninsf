@@ -6,7 +6,8 @@ import { updateBounds, updateFilter } from '../../actions/filter_actions';
 import { allLocations } from '../../reducers/selectors'
 
 const mapStateToProps = state => ({
-  locations: allLocations(state)
+  locations: allLocations(state),
+  filters: state.filters,
 })
 
 const mapDispatchToProps = dispatch => ({
