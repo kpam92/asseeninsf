@@ -14,7 +14,7 @@ export default class MarkerManager {
     locations
       .filter(location => !this.markers[location.id])
       .forEach(newLocation => this.createMarkerFromLocation(newLocation, this.handleClick))
-      
+
     Object.keys(this.markers)
       .filter(locationId => !locationsObj[locationId])
       .forEach((locationId) => this.removeMarker(this.markers[locationId]))
@@ -33,8 +33,8 @@ export default class MarkerManager {
   }
 
   removeMarker(marker) {
-    debugger;
-    this.markers[marker.LocationId].setMap(null);
+    // debugger;
+    this.markers[marker.locationId].setMap(null);
     delete this.markers[marker.locationId];
   }
 }
