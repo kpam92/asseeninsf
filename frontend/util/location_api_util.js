@@ -23,3 +23,12 @@ export const fetchLocations = (data) => {
     data
   })
 }
+
+export const fetchSingleLocationInfo = (data) => {
+  return $.ajax({
+    method: 'GET' ,
+    url: `https://api.themoviedb.org/3/search/movie?api_key=00733eaa74c3c5021be9a3f9993f5a4b&language=en-US&query=Godzilla&page=1&include_adult=false&year=2014`,
+    success: (err) => console.log(err),
+
+  })
+}
