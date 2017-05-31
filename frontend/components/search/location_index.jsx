@@ -1,5 +1,7 @@
 import React from 'react';
 
+import IndexItem from './location_index_item';
+
 class LocationIndex extends React.Component {
   constructor(props){
     super(props)

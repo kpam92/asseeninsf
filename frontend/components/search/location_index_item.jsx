@@ -13,21 +13,20 @@ class IndexItem extends React.Component {
   }
 
   render() {
-    const { average_rating, description, picture_url } = this.props.location;
+    const { title, locations, director } = this.props.location;
     return (
       <div
         className="location-index-item"
         onClick={this.handleClick}
       >
         <div className="index-item-info">
-          <span className="index-item-category">Rating:</span>
-          <span className="index-item-copy">
-            {average_rating || 'No reviews yet'}
-          </span>
-          <span className="index-item-category">Description:</span>
-          <span className="index-item-copy">{description}</span>
+          <span className="index-item-category">Movie:</span>
+          <span className="index-item-copy">{title}</span>
+          <span className="index-item-category">Director:</span>
+          <span className="index-item-copy">{director}</span>
+          <span className="index-item-category">Location:</span>
+          <span className="index-item-copy">{locations}</span>
         </div>
-        <img src={picture_url}/>
       </div>
     );
   }
