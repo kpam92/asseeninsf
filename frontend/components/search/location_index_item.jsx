@@ -9,6 +9,7 @@ class IndexItem extends React.Component {
 
   handleClick() {
     const locationId = this.props.location.id;
+    // debugger;
     this.props.history.push(`/locationes/${locationId}`);
   }
 
@@ -32,4 +33,4 @@ class IndexItem extends React.Component {
   }
 }
 
-export default withRouter(IndexItem);
+export default (IndexItem);

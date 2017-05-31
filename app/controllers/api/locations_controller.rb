@@ -1,7 +1,7 @@
 class Api::LocationsController < ApplicationController
 
   def index
-    @locations =  bounds ? Location.where(['latitude IS NOT NULL']).in_bounds(bounds) : Location.where(['latitude IS NOT NULL'])
+    @locations =  bounds ? Location.where(['latitude IS NOT NULL']).in_bounds(bounds).limit(10) : Location.where(['latitude IS NOT NULL'])
   end
 
   def create

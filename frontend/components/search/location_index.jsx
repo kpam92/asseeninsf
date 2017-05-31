@@ -18,12 +18,18 @@ class LocationIndex extends React.Component {
 
       )
     );
+    const locationIndexDetails = this.props.locations.map(location => (
+      <IndexItem
+        location={location}
+        key={location.id}
+      />
+      )
+    );
     return(
       <div>
-        <ul>
-          {locationDetails}
-        </ul>
-      </div>
+       <h1>Movies: </h1>
+       {locationIndexDetails}
+     </div>
     )
   }
 };
