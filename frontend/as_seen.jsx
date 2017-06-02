@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.retrieveLocations = retrieveLocations;
   window.fetchLocations = fetchLocations;
+  window.fetchLocationDetail = fetchLocationDetail;
   window.fetchLocationInfo = fetchLocationInfo;
   window.receiveLocations = receiveLocations;
   window.saveLocations = saveLocations;
