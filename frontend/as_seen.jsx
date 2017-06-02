@@ -4,6 +4,7 @@ import Root from './components/root';
 import React from 'react';
 import { retrieveLocations, saveLocations, fetchLocationInfo } from './util/location_api_util';
 import { receiveLocations, fetchLocations} from './actions/location_actions';
+import { fetchLocationDetail } from './actions/location_detail_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {

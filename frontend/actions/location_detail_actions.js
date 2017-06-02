@@ -7,7 +7,7 @@ export const receiveLocationDetail = location => ({
   location
 });
 
-export const fetchLocation = (movie,year) => dispatch => (
+export const fetchLocationDetail = (movie,year) => dispatch => (
   APIUtil.fetchLocationInfo(movie,year)
     .then(location => dispatch(receiveLocationDetail(location)))
 );
