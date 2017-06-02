@@ -9,12 +9,11 @@ class IndexItem extends React.Component {
 
   handleClick() {
     const locationId = this.props.location.id;
-    // debugger;
     this.props.history.push(`/locationes/${locationId}`);
   }
 
   render() {
-    const { title, locations, director } = this.props.location;
+    const { title, locations, director, release_year } = this.props.location;
     return (
       <div
         className="location-index-item"
@@ -23,6 +22,7 @@ class IndexItem extends React.Component {
         <div className="index-item-info">
           <span className="index-item-category">Movie:</span>
           <span className="index-item-copy">{title}</span>
+          <span className="index-item-copy">{release_year}</span>
           <span className="index-item-category">Director:</span>
           <span className="index-item-copy">{director}</span>
           <span className="index-item-category">Location:</span>
