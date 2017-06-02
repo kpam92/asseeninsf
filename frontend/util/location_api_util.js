@@ -30,7 +30,6 @@ export const fetchLocations = (data) => {
 export const fetchLocationInfo = (movie,year) => {
   return $.ajax({
     method: 'GET' ,
-    url: `https://api.themoviedb.org/3/search/movie?api_key=00733eaa74c3c5021be9a3f9993f5a4b&language=en-US&query=${movie}&page=1&include_adult=false&year=${year}`,
-    success: (err) => console.log(err['results'][0])
+    url: `https://api.themoviedb.org/3/search/movie?api_key=00733eaa74c3c5021be9a3f9993f5a4b&language=en-US&query=${movie}&page=1&include_adult=false&year=${year}`
   })
 }
