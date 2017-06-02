@@ -5,7 +5,8 @@ import LocationDetailReducer from './location_detail_reducer';
 
 const rootReducer = combineReducers({
   locations: LocationsReducer,
-  filters: FilterReducer
+  filters: FilterReducer,
+  detail: LocationDetailReducer
 });
 
 export default rootReducer;
