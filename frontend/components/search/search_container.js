@@ -8,6 +8,7 @@ import { allLocations } from '../../reducers/selectors'
 const mapStateToProps = state => ({
   locations: allLocations(state),
   filters: state.filters,
+  movie: state.detail
 })
 
 const mapDispatchToProps = dispatch => ({
