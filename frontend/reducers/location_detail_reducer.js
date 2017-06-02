@@ -1,17 +1,17 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_LOCATIONS } from '../actions/location_actions';
+import { RECEIVE_LOCATION_DETAIL } from '../actions/location_detail_actions';
 
-const LocationsReducer = (state = {}, action) => {
+const LocationDetailReducer = (state = {}, action) => {
   Object.freeze(state)
   let newState = merge({}, state);
 
   switch(action.type) {
-    case RECEIVE_LOCATIONS:
-      return action.locations;
+    case RECEIVE_LOCATION_DETAIL:
+      return action.location;
     default:
       return state;
   }
 };
 
-export default LocationsReducer;
+export default LocationDetailReducer;
