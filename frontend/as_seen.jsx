@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import React from 'react';
-import { retrieveLocations, saveLocations } from './util/location_api_util';
+import { retrieveLocations, saveLocations, fetchLocationInfo } from './util/location_api_util';
 import { receiveLocations, fetchLocations} from './actions/location_actions';
 
 
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.retrieveLocations = retrieveLocations;
   window.fetchLocations = fetchLocations;
+  window.fetchLocationInfo = fetchLocationInfo;
   window.receiveLocations = receiveLocations;
   window.saveLocations = saveLocations;
   const root = document.getElementById('root');
