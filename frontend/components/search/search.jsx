@@ -2,6 +2,7 @@ import React from 'react';
 
 import LocationIndex from './location_index';
 import FilterForm from './filter_form';
+import LocationDetail from './location_detail';
 import LocationMap from '../location_map/location_map';
 
 const Search = ({ locations, fetchLocations, updateBounds, updateFilter }) => (
