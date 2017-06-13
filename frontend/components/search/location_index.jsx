@@ -1,6 +1,7 @@
 import React from 'react';
 
 import IndexItem from './location_index_item';
+import LocationDetail from './location_detail';
 
 class LocationIndex extends React.Component {
   constructor(props){
@@ -27,8 +28,10 @@ class LocationIndex extends React.Component {
     );
     return(
       <div>
-       <h1>Movies: </h1>
-       {locationIndexDetails}
+        <div>
+         <h1>Movies: </h1>
+         {locationIndexDetails}
+       </div>
      </div>
     )
   }
