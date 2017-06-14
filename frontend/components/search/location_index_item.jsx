@@ -8,8 +8,11 @@ class IndexItem extends React.Component {
   }
 
   handleClick() {
-    const locationId = this.props.location.id;
-    this.props.history.push(`/locations/${locationId}`);
+    // const locationId = this.props.location.id;
+    // this.props.history.push(`/locations/${locationId}`);
+    const { fetchLocationDetail } = this.props
+    const { title, release_year } = this.props.location
+    fetchLocationDetail(title, release_year)
   }
 
   render() {
