@@ -13,14 +13,22 @@ const Search = ({
   fetchLocationDetail,
   movie
   }) => (
-  <div className="user-pane">
-    <div className="left-half">
-      <LocationMap locations={locations}  updateBounds={updateBounds} updateFilter={updateFilter}/>
-      <LocationIndex locations={locations} fetchLocationDetail={fetchLocationDetail}/>
-      <FilterForm updateFilter={updateFilter}/>
-      <LocationDetail movie={movie}/>
+    <div>
+      <div className="user-pane">
+        <div className="left-half">
+          <LocationMap locations={locations}  updateBounds={updateBounds} updateFilter={updateFilter}/>
+        </div>
+        <div>
+          <FilterForm updateFilter={updateFilter}/>
+          <div className='right-half'>
+            <LocationIndex locations={locations} fetchLocationDetail={fetchLocationDetail}/>
+          </div>
+      </div>
+      </div>
+      <div className='bottom-half'>
+        <LocationDetail movie={movie}/>
+      </div>
     </div>
-  </div>
 );
 
 export default Search;

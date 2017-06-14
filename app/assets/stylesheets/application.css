@@ -13,13 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+
+  /*html, body, header, nav, h1, a, ul, li,
+  strong, main, section, img, div, h2, p,
+  form, fieldset, label, input, textarea,
+  button, article, footer, small {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    box-sizing: inherit;
+    text-align: inherit;
+    text-decoration: inherit;
+    vertical-align: inherit;
+    color: inherit;
+    background: transparent;
+    font-family: Helvetica,'Roboto', sans-serif;
+    list-style-type: none;
+  }*/
+
  .map {
    width: 500px;
    height: 500px;
    float: left;
    position: relative;
  }
-/*
+
 
 ::-webkit-scrollbar {
     width: 12px;
@@ -138,7 +159,7 @@ h1, h5 {
 }
 
 .review-button {
-  /* padding-top: 1px; */
+   padding-top: 1px;
 }
 
 .header-name {
@@ -232,4 +253,8 @@ button.new-bench-button {
 hr {
   border-bottom: 1px solid grey;
 }
-*/
+
+/*detail*/
+.movie-detail img {
+  max-width:200px;
+}
