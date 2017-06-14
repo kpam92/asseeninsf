@@ -19,7 +19,6 @@ const Search = ({
           <LocationMap locations={locations}  updateBounds={updateBounds} updateFilter={updateFilter}/>
         </div>
         <div>
-          <FilterForm updateFilter={updateFilter}/>
           <div className='right-half'>
             <LocationIndex locations={locations} fetchLocationDetail={fetchLocationDetail}/>
           </div>

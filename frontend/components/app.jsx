@@ -10,17 +10,15 @@ import {
 
 import SearchContainer from './search/search_container';
 import LocationMap from './location_map/location_map';
+import Nav from './nav/nav';
 
 
 const App = () => (
   <div>
     <header>
-      <Link to="/" className="header-link">
-        <h1>As Seen in SF</h1>
-      </Link>
-
+      <Nav/>
     </header>
-      
+
       <Route exact path="/" component={ SearchContainer } />
   </div>
 );
