@@ -18,12 +18,12 @@ class FilterForm extends React.Component {
     this.setState({ input: e.target.value})
   }
   handleRadioChange(event) {
-    this.props.updateFilter(this.state.selected, null)
-    this.setState({
-      selected: event.target.value
-    });
-
-    this.props.updateFilter(this.state.selected, this.state.selected.input)
+    this.props.removeFilter(this.state.selected)
+    // debugger;
+    this.setState({ selected: event.target.value });
+    // debugger;
+    this.props.updateFilter(event.target.value, this.state.input)
+    console.log(this.state)
 
   }
 
