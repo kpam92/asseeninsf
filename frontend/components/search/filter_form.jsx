@@ -24,7 +24,7 @@ class FilterForm extends React.Component {
     });
 
     this.props.updateFilter(this.state.selected, this.state.selected.input)
-    
+
   }
 
   render(){

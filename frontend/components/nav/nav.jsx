@@ -8,14 +8,17 @@ class Nav extends React.Component {
   }
 
   render(){
-    const { updateFilter } = this.props
+    const { updateFilter, removeFilter } = this.props
     return(
       <div className='navigation-bar'>
         <div className='title'>
           <h1>As Seen in SF</h1>
         </div>
         <div className='filter-form'>
-          <FilterForm updateFilter={updateFilter}/>
+          <FilterForm
+            updateFilter={updateFilter}
+            removeFilter={removeFilter}
+          />
         </div>
       </div>
     )

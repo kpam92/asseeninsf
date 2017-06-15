@@ -1,7 +1,7 @@
 import Nav from './nav';
 import { connect } from 'react-redux';
 
-import { updateFilter } from '../../actions/filter_actions';
+import { updateFilter, removeFilter } from '../../actions/filter_actions';
 
 //
 // const mapStateToProps = state => ({
@@ -11,7 +11,8 @@ import { updateFilter } from '../../actions/filter_actions';
 // })
 
 const mapDispatchToProps = dispatch => ({
-  updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+  removeFilter: (filter) => dispatch(removeFilter(filter))
 });
 
 export default connect(
