@@ -45,8 +45,11 @@ class LocationMap extends React.Component {
       // });
     }
 
-    handleMarkerClick(location) {
+    handleMarkerClick(location, marker) {
+      // debugger;
       this.props.fetchLocationDetail(location.title,location.release_year)
+      this.map.panTo(marker.getPosition())
+      // marker.setIcon('http://res.cloudinary.com/dt5viyxyq/image/upload/v1497492302/map-localization_hh6uet.png')
       // this.props.history.push(`locations/${location.id}`);
     }
 

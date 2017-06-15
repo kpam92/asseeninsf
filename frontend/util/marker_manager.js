@@ -28,7 +28,7 @@ export default class MarkerManager {
       locationId: location.id
     });
 
-    marker.addListener('click', () => this.handleClick(location));
+    marker.addListener('click', () => this.handleClick(location,marker));
     this.markers[marker.locationId] = marker;
   }
 
