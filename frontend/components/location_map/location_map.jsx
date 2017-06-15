@@ -109,13 +109,6 @@ class LocationMap extends React.Component {
       // this.props.history.push(`locations/${location.id}`);
     }
 
-    // handleClick(coords) {
-    //   this.props.history.push({
-    //     pathname: 'locations/new',
-    //     search: `lat=${coords.lat}&lng=${coords.lng}`
-    //   });
-    // }
-
   render(){
     return (
       <div className="map" ref="map">
