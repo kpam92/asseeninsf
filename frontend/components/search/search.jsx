@@ -12,13 +12,8 @@ class Search extends React.Component {
     this.handleIndexClick = this.handleIndexClick.bind(this);
   }
 
-  componentDidMount(){
-    // debugger;
-    // console.log(this)
-  }
 
   handleIndexClick(position){
-    // debugger;
     var latLng = new google.maps.LatLng(position[0], position[1]);
     this.map.map.panTo(latLng);
   }
