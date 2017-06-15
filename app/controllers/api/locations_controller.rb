@@ -1,7 +1,22 @@
+require 'byebug'
 class Api::LocationsController < ApplicationController
 
   def index
+
+
     @locations =  bounds ? Location.where(['latitude IS NOT NULL']).in_bounds(bounds) : Location.where(['latitude IS NOT NULL'])
+
+    if (params[:title])
+      @locations = @locations.where("lower(title) LIKE (?)", "%#{params[:title].downcase}%")
+    elsif (params[:release_year])
+      @locations = @locations.where("lower(release_year) LIKE (?)", params[:release_year])
+    elsif (params[:person])
+      @locations = @locations
+      .where("lower(director) LIKE (?)","%#{params[:person].downcase}%")
+    elsif (params[:actor])
+      @locations = @locations.where(seating: seating_range)
+    end
+
   end
 
   def create

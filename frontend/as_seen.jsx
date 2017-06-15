@@ -5,6 +5,7 @@ import React from 'react';
 import { retrieveLocations, saveLocations, fetchLocationInfo } from './util/location_api_util';
 import { receiveLocations, fetchLocations} from './actions/location_actions';
 import { fetchLocationDetail } from './actions/location_detail_actions';
+import { updateFilter } from './actions/filter_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchLocationInfo = fetchLocationInfo;
   window.receiveLocations = receiveLocations;
   window.saveLocations = saveLocations;
+  window.updateFilter = updateFilter;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });
