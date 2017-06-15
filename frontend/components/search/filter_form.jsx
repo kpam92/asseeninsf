@@ -41,8 +41,8 @@ class FilterForm extends React.Component {
   handleChange() {
     this.props.updateFilter(this.state.selected,e.currentTarget.value)
   }
-  handleRadioChange(filter) {
-    console.log(filter)
+  handleRadioChange(event) {
+    console.log(event)
   }
 
   render(){
@@ -57,14 +57,26 @@ class FilterForm extends React.Component {
           value='1'
           onChange={this.handleChange}
         />
-      <form>
-        <label>Title</label>
-        <input type="radio" value="title" onChange={() => (this.handleRadioChange('title'))}/>
-        <label>Year</label>
-        <input type="radio" value="year" onChange={() => (this.handleRadioChange('release_year'))}/>
-        <label>Person</label>
-        <input type="radio" value="person" onChange={() => (this.handleRadioChange('person'))}/>        
-      </form>
+        <form>
+          <div className="radio">
+            <label>
+              <input type="radio" value="title" checked={this.state.selected = 'title'} onChange={this.handleRadioChange}/>
+              Title
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input type="radio" value="release_year" checked= {this.state.selected = 'release_year'} onChange={this.handleRadioChange}/>
+              Year
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input type="radio" value="person" checked= {this.state.selected = 'person'}  onChange={this.handleRadioChange}/>
+              Person
+            </label>
+          </div>
+        </form>
       </div>
     )
   }
