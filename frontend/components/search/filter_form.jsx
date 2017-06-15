@@ -18,10 +18,13 @@ class FilterForm extends React.Component {
     this.setState({ input: e.target.value})
   }
   handleRadioChange(event) {
-    console.log(event.target.value)
+    this.props.updateFilter(this.state.selected, null)
     this.setState({
       selected: event.target.value
     });
+
+    this.props.updateFilter(this.state.selected, this.state.selected.input)
+    
   }
 
   render(){
@@ -30,13 +33,14 @@ class FilterForm extends React.Component {
       <div>
         <span className="filter">Filter results:</span>
         <br/>
+        <form className ='input-text'>
         <label>Title</label>
         <input
           type="text"
           value={this.state[this.state.selected]}
           onChange={this.handleChange}
+          ref={(input) => this.input = input}
         />
-        <form>
           <div className="radio">
             <label>
               <input type="radio" value="title" checked={this.state.selected == 'title'} onChange={this.handleRadioChange}/>
