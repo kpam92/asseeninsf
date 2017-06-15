@@ -3,8 +3,9 @@ class Api::LocationsController < ApplicationController
 
   def index
 
+    @locations = Location.all
 
-    @locations =  bounds ? Location.where(['latitude IS NOT NULL']).in_bounds(bounds) : Location.where(['latitude IS NOT NULL'])
+    # @locations =  bounds ? Location.where(['latitude IS NOT NULL']).in_bounds(bounds) : Location.where(['latitude IS NOT NULL'])
 
     if (params[:title])
       @locations = @locations.where("lower(title) LIKE (?)", "%#{params[:title].downcase}%")
