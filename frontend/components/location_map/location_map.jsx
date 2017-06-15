@@ -60,6 +60,7 @@ class LocationMap extends React.Component {
     this.MarkerManager = new MarkerManager(this.map,this.handleMarkerClick.bind(this));
     this.registerListeners();
     this.MarkerManager.updateMarkers(this.props.locations);
+
     }
 
     componentDidUpdate() {
@@ -85,7 +86,7 @@ class LocationMap extends React.Component {
     handleMarkerClick(location, marker) {
       // debugger;
       this.props.fetchLocationDetail(location.title,location.release_year)
-
+      // marker.setAnimation(google.maps.Animation.BOUNCE)
       this.map.panTo(marker.getPosition())
       // marker.setIcon('http://res.cloudinary.com/dt5viyxyq/image/upload/v1497492302/map-localization_hh6uet.png')
       // this.props.history.push(`locations/${location.id}`);
