@@ -60,7 +60,7 @@ class LocationMap extends React.Component {
     this.MarkerManager = new MarkerManager(this.map,this.handleMarkerClick.bind(this));
     this.registerListeners();
     this.MarkerManager.updateMarkers(this.props.locations);
-
+    this.state = { focus: null }
     }
 
     componentDidUpdate() {
@@ -83,9 +83,23 @@ class LocationMap extends React.Component {
       // });
     }
 
+    toggleBounce(marker) {
+      if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+    }
+
     handleMarkerClick(location, marker) {
       // debugger;
       this.props.fetchLocationDetail(location.title,location.release_year)
+      if (this.state.focus !== null) {
+        toggleBounce(this.state.focus)
+      }
+
+      toggleBounce(marker);
+      this.setState({ focus: marker})
       // marker.setAnimation(google.maps.Animation.BOUNCE)
       this.map.panTo(marker.getPosition())
       // marker.setIcon('http://res.cloudinary.com/dt5viyxyq/image/upload/v1497492302/map-localization_hh6uet.png')
