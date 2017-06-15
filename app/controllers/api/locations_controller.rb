@@ -8,13 +8,11 @@ class Api::LocationsController < ApplicationController
 
     if (params[:title])
       @locations = @locations.where("lower(title) LIKE (?)", "%#{params[:title].downcase}%")
-    elsif (params[:release_year])
-      @locations = @locations.where("lower(release_year) LIKE (?)", params[:release_year])
     elsif (params[:person])
+      search_query = "%#{params[:person].downcase}%"
       @locations = @locations
-      .where("lower(director) LIKE (?)","%#{params[:person].downcase}%")
-    elsif (params[:actor])
-      @locations = @locations.where(seating: seating_range)
+      .where("lower(director) LIKE (?) or lower(actor_1) LIKE (?) or lower(actor_2) LIKE (?)",
+      search_query,search_query, search_query)
     end
 
   end

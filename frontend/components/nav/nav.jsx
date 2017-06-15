@@ -7,7 +7,6 @@ class Nav extends React.Component {
     super(props)
   }
 
-
   render(){
     const { updateFilter } = this.props
     return(

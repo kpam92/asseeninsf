@@ -1,51 +1,27 @@
 import React from 'react';
 
-// const handleChange = (filter, updateFilter) => e => (
-//   updateFilter(filter, e.currentTarget.value)
-// );
-//
-// const FilterForm = ({ updateFilter }) => (
-//   <div>
-//     <span className="filter">Filter results:</span>
-//     <br/>
-//     <label>Title</label>
-//     <input
-//       type="number"
-//       value='1'
-//       onChange={handleChange('minSeating', updateFilter)}
-//     />
-//     <input type="radio" name="gender" value="male" checked> Male<br>
-//     <input type="radio" name="gender" value="female"> Female<br>
-//     <input type="radio" name="gender" value="other"> Other
-//      <br/>
-//     <label>Release Year</label>
-//     <input
-//       type="number"
-//       value='1'
-//       onChange={handleChange('maxSeating', updateFilter)}
-//     />
-//   </div>
-// );
-
-// export default FilterForm;
-
 class FilterForm extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = { selected: 'title'};
+    this.state = {
+      selected: 'title',
+      input: ''
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleRadioChange = this.handleRadioChange.bind(this);
   }
 
-  handleChange() {
+  handleChange(e) {
+
     this.props.updateFilter(this.state.selected,e.currentTarget.value)
+    this.setState({ input: e.target.value})
   }
   handleRadioChange(event) {
+    console.log(event.target.value)
     this.setState({
       selected: event.target.value
     });
-    console.log(event.target.value)
   }
 
   render(){
@@ -56,8 +32,8 @@ class FilterForm extends React.Component {
         <br/>
         <label>Title</label>
         <input
-          type="number"
-          value='1'
+          type="text"
+          value={this.state[this.state.selected]}
           onChange={this.handleChange}
         />
         <form>
@@ -65,12 +41,6 @@ class FilterForm extends React.Component {
             <label>
               <input type="radio" value="title" checked={this.state.selected == 'title'} onChange={this.handleRadioChange}/>
               Title
-            </label>
-          </div>
-          <div className="radio">
-            <label>
-              <input type="radio" value="release_year" checked= {this.state.selected == 'release_year'} onChange={this.handleRadioChange}/>
-              Year
             </label>
           </div>
           <div className="radio">

@@ -10,12 +10,12 @@ import {
 
 import SearchContainer from './search/search_container';
 import LocationMap from './location_map/location_map';
-import Nav from './nav/nav';
+import NavContainer from './nav/nav_container';
 
 
 const App = () => (
   <div className='container'>
-      <Nav/>
+      <NavContainer/>
 
       <Route exact path="/" component={ SearchContainer } />
   </div>
