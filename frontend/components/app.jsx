@@ -14,10 +14,8 @@ import Nav from './nav/nav';
 
 
 const App = () => (
-  <div>
-    <header>
+  <div className='container'>
       <Nav/>
-    </header>
 
       <Route exact path="/" component={ SearchContainer } />
   </div>

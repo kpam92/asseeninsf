@@ -16,7 +16,12 @@ const Search = ({
     <div>
       <div className="user-pane">
         <div className="left-half">
-          <LocationMap locations={locations}  updateBounds={updateBounds} updateFilter={updateFilter}/>
+          <LocationMap
+            locations={locations}
+            updateBounds={updateBounds}
+            updateFilter={updateFilter}
+            fetchLocationDetail={fetchLocationDetail}
+            />
         </div>
         <div>
           <div className='right-half'>

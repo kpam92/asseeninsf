@@ -46,7 +46,8 @@ class LocationMap extends React.Component {
     }
 
     handleMarkerClick(location) {
-      this.props.history.push(`locations/${location.id}`);
+      this.props.fetchLocationDetail(location.title,location.release_year)
+      // this.props.history.push(`locations/${location.id}`);
     }
 
     // handleClick(coords) {

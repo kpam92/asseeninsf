@@ -15,7 +15,7 @@ class Nav extends React.Component {
         <div className='title'>
           <h1>As Seen in SF</h1>
         </div>
-        <div className='fiter-form'>
+        <div className='filter-form'>
           <FilterForm updateFilter={updateFilter}/>
         </div>
       </div>
