@@ -30,6 +30,11 @@ export default class MarkerManager {
       .forEach((locationId) => this.removeMarker(this.markers[locationId]))
   }
 
+  handleIt(location, marker){
+    marker.setAnimation(google.maps.Animation.BOUNCE)
+    this.handleClick(location,marker)
+  }
+
   createMarkerFromLocation(location) {
     const position = new google.maps.LatLng(location.latitude, location.longitude);
     const marker = new google.maps.Marker({
@@ -39,7 +44,7 @@ export default class MarkerManager {
       icon: symbolIcon
     });
 
-    marker.addListener('click', () => this.handleClick(location,marker));
+    marker.addListener('click', () => this.handleIt(location, marker));
     this.markers[marker.locationId] = marker;
   }
 
