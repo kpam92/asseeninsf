@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 
 import SearchContainer from './search/search_container';
-import LocationMap from './location_map/location_map';
+
 import NavContainer from './nav/nav_container';
 
 

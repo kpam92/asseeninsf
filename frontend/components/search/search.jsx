@@ -11,6 +11,10 @@ class Search extends React.Component {
     super(props)
   }
 
+  componentDidMount(){
+    // debugger;
+    console.log(this)
+  }
   render(){
     var {
       locations,
@@ -25,6 +29,7 @@ class Search extends React.Component {
         <div className="user-pane">
           <div className="left-half">
             <LocationMap
+              ref={(lala) => this.lala = lala}
               locations={locations}
               updateBounds={updateBounds}
               updateFilter={updateFilter}
@@ -33,7 +38,7 @@ class Search extends React.Component {
           </div>
           <div>
             <div className='right-half'>
-              <LocationIndex locations={locations} fetchLocationDetail={fetchLocationDetail}/>
+              <LocationIndex ref={(la) => this.la = la}locations={locations} fetchLocationDetail={fetchLocationDetail}/>
             </div>
           </div>
         </div>

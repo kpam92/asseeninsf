@@ -69,4 +69,4 @@ class LocationMap extends React.Component {
   }
 }
 
-export default withRouter(LocationMap);
+export default (LocationMap);
