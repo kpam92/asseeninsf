@@ -13,7 +13,7 @@ class LocationIndex extends React.Component {
   }
 
   render() {
-    const { locations,fetchLocationDetail } = this.props;
+    const { locations,fetchLocationDetail, handleIndexClick } = this.props;
     const locationDetails = this.props.locations.map(location => (
         <li key={location.id}>{location.title}</li>
 
@@ -23,6 +23,7 @@ class LocationIndex extends React.Component {
       <IndexItem
         location={location}
         fetchLocationDetail={fetchLocationDetail}
+        handleIndexClick={handleIndexClick}
         key={location.id}
       />
       )

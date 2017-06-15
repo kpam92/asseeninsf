@@ -9,12 +9,20 @@ import LocationMap from '../location_map/location_map';
 class Search extends React.Component {
   constructor(props){
     super(props)
+    this.handleIndexClick = this.handleIndexClick.bind(this);
   }
 
   componentDidMount(){
     // debugger;
-    console.log(this)
+    // console.log(this)
   }
+
+  handleIndexClick(position){
+    // debugger;
+    var latLng = new google.maps.LatLng(position[0], position[1]);
+    this.map.map.panTo(latLng);
+  }
+
   render(){
     var {
       locations,
@@ -29,7 +37,7 @@ class Search extends React.Component {
         <div className="user-pane">
           <div className="left-half">
             <LocationMap
-              ref={(lala) => this.lala = lala}
+              ref={(map) => this.map = map}
               locations={locations}
               updateBounds={updateBounds}
               updateFilter={updateFilter}
@@ -38,7 +46,11 @@ class Search extends React.Component {
           </div>
           <div>
             <div className='right-half'>
-              <LocationIndex ref={(la) => this.la = la}locations={locations} fetchLocationDetail={fetchLocationDetail}/>
+              <LocationIndex
+                locations={locations}
+                fetchLocationDetail={fetchLocationDetail}
+                handleIndexClick={this.handleIndexClick}
+              />
             </div>
           </div>
         </div>
