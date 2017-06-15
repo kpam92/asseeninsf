@@ -6,6 +6,7 @@ import { retrieveLocations, saveLocations, fetchLocationInfo } from './util/loca
 import { receiveLocations, fetchLocations} from './actions/location_actions';
 import { fetchLocationDetail } from './actions/location_detail_actions';
 import { updateFilter, removeFilter } from './actions/filter_actions';
+import { addFocus, deleteFocus } from './actions/focus_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.saveLocations = saveLocations;
   window.updateFilter = updateFilter;
   window.removeFilter = removeFilter;
+  window.addFocus = addFocus;
+  window.deleteFocus = deleteFocus;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });
