@@ -25,7 +25,10 @@ class Search extends React.Component {
       updateBounds,
       updateFilter,
       fetchLocationDetail,
-      movie
+      movie,
+      focus,
+      addFocus,
+      deleteFocus
     } = this.props
     return(
       <div>
@@ -37,6 +40,9 @@ class Search extends React.Component {
               updateBounds={updateBounds}
               updateFilter={updateFilter}
               fetchLocationDetail={fetchLocationDetail}
+              focus={focus}
+              addFocus={addFocus}
+              deleteFocus={deleteFocus}
               />
           </div>
           <div>

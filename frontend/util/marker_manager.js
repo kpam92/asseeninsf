@@ -14,10 +14,12 @@ export default class MarkerManager {
     this.map = map;
     this.markers = {};
     this.handleClick = handleClick;
+    this.focus = null
 
   }
 
   updateMarkers(locations){
+
     const locationsObj = {};
     locations.forEach(location => locationsObj[location.id] = location);
 
@@ -31,8 +33,22 @@ export default class MarkerManager {
   }
 
   handleIt(location, marker){
-    marker.setAnimation(google.maps.Animation.BOUNCE)
+    // debugger;
+    // if (this.focus) {
+    //   Object.keys(this.markers).forEach((locationId) => {
+    //     if (this.markers[locationId] == this.focus) {
+    //       var coords = this.markers[locationid].getPosition();
+    //       var newCoords = { longitude: coords.lng(), latitude: coords.lon() };
+    //       var newMarker = createMarkerFromLocation(newCoords);
+    //
+    //       this.markers[locationId] = newMarker;
+    //       // break;
+    //     }
+    //   })
+    // };
+
     this.handleClick(location,marker)
+    this.focus = marker
   }
 
   createMarkerFromLocation(location) {

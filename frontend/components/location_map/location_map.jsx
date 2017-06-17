@@ -51,6 +51,8 @@ const styledMapType = new google.maps.StyledMapType(
   ],
     {name: 'Styled Map'})
 
+
+
 class LocationMap extends React.Component {
   componentDidMount() {
     const map = this.refs.map;
@@ -59,13 +61,13 @@ class LocationMap extends React.Component {
     this.map.setMapTypeId('styled_map')
     this.MarkerManager = new MarkerManager(this.map,this.handleMarkerClick.bind(this));
     this.registerListeners();
-    this.MarkerManager.updateMarkers(this.props.locations);
+    this.MarkerManager.updateMarkers(this.props.locations, this.props.focus);
     this.state = { focus: null };
     this.toggleBounce = this.toggleBounce.bind(this);
     }
 
     componentDidUpdate() {
-      this.MarkerManager.updateMarkers(this.props.locations);
+      this.MarkerManager.updateMarkers(this.props.locations, this.props.focus);
 
     }
 
@@ -93,20 +95,15 @@ class LocationMap extends React.Component {
     }
 
     handleMarkerClick(location, marker) {
-      // debugger;
-      this.props.fetchLocationDetail(location.title,location.release_year)
-      // if (this.state.focus !== null) {
-      //   this.toggleBounce(this.state.focus)
-      // }
 
-      // debugger;
+      this.props.addFocus(marker);
+      this.props.focus.setAnimation(google.maps.Animation.BOUNCE)
+      this.props.fetchLocationDetail(location.title,location.release_year);
+
       this.setState({ focus: marker})
-      // this.toggleBounce(this.state.focus);
-      // debugger;
-      // marker.setAnimation(google.maps.Animation.BOUNCE)
+
       this.map.panTo(marker.getPosition())
-      // marker.setIcon('http://res.cloudinary.com/dt5viyxyq/image/upload/v1497492302/map-localization_hh6uet.png')
-      // this.props.history.push(`locations/${location.id}`);
+
     }
 
   render(){
