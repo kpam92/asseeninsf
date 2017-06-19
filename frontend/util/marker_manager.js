@@ -32,7 +32,7 @@ export default class MarkerManager {
       .forEach((locationId) => this.removeMarker(this.markers[locationId]))
   }
 
-  handleIt(location, marker){
+  handleIt(location, marker, locationId){
     // debugger;
     // if (this.focus) {
     //   Object.keys(this.markers).forEach((locationId) => {
@@ -46,7 +46,7 @@ export default class MarkerManager {
     //     }
     //   })
     // };
-
+    debugger;
     this.handleClick(location,marker)
     this.focus = marker
   }
@@ -60,7 +60,7 @@ export default class MarkerManager {
       icon: symbolIcon
     });
 
-    marker.addListener('click', () => this.handleIt(location, marker));
+    marker.addListener('click', () => this.handleIt(location, marker, marker.locationId));
     this.markers[marker.locationId] = marker;
   }
 
