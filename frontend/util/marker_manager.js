@@ -32,21 +32,10 @@ export default class MarkerManager {
       .forEach((locationId) => this.removeMarker(this.markers[locationId]))
   }
 
-  handleIt(location, marker, locationId){
-    // debugger;
-    // if (this.focus) {
-    //   Object.keys(this.markers).forEach((locationId) => {
-    //     if (this.markers[locationId] == this.focus) {
-    //       var coords = this.markers[locationid].getPosition();
-    //       var newCoords = { longitude: coords.lng(), latitude: coords.lon() };
-    //       var newMarker = createMarkerFromLocation(newCoords);
-    //
-    //       this.markers[locationId] = newMarker;
-    //       // break;
-    //     }
-    //   })
-    // };
-    debugger;
+  handleIt(location, marker){
+
+    if (this.focus) {this.removeMarker(this.focus)}
+
     this.handleClick(location,marker)
     this.focus = marker
   }
@@ -60,7 +49,7 @@ export default class MarkerManager {
       icon: symbolIcon
     });
 
-    marker.addListener('click', () => this.handleIt(location, marker, marker.locationId));
+    marker.addListener('click', () => this.handleIt(location, marker));
     this.markers[marker.locationId] = marker;
   }
 

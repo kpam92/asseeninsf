@@ -62,8 +62,8 @@ class LocationMap extends React.Component {
     this.MarkerManager = new MarkerManager(this.map,this.handleMarkerClick.bind(this));
     this.registerListeners();
     this.MarkerManager.updateMarkers(this.props.locations, this.props.focus);
+    this.findMarker = this.findMarker.bind(this)
     this.state = { focus: null };
-    this.toggleBounce = this.toggleBounce.bind(this);
     }
 
     componentDidUpdate() {
@@ -86,21 +86,17 @@ class LocationMap extends React.Component {
       // });
     }
 
-    toggleBounce(marker) {
-      if (marker.getAnimation() !== null) {
-        marker.setAnimation(null);
-      } else {
-        marker.setAnimation(google.maps.Animation.BOUNCE);
-      }
+    findMarker(marker){
+
     }
 
     handleMarkerClick(location, marker) {
-
-      this.props.addFocus(marker);
-      this.props.focus.setAnimation(google.maps.Animation.BOUNCE)
+      debugger;
+      // this.props.addFocus(marker);
+      marker.setAnimation(google.maps.Animation.BOUNCE)
       this.props.fetchLocationDetail(location.title,location.release_year);
 
-      this.setState({ focus: marker})
+      // this.setState({ focus: marker})
 
       this.map.panTo(marker.getPosition())
 
