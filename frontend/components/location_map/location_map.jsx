@@ -61,11 +61,11 @@ class LocationMap extends React.Component {
     this.map.setMapTypeId('styled_map')
     this.MarkerManager = new MarkerManager(this.map,this.handleMarkerClick.bind(this));
     this.registerListeners();
-    this.MarkerManager.updateMarkers(this.props.locations, this.props.focus);
+    this.MarkerManager.updateMarkers(this.props.locations);
     }
 
     componentDidUpdate() {
-      this.MarkerManager.updateMarkers(this.props.locations, this.props.focus);
+      this.MarkerManager.updateMarkers(this.props.locations);
 
     }
 
