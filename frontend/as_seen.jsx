@@ -9,6 +9,7 @@ import { updateFilter, removeFilter } from './actions/filter_actions';
 import { addFocus, deleteFocus } from './actions/focus_actions';
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
   window.store = store;
