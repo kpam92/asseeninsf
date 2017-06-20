@@ -35,7 +35,9 @@ export default class MarkerManager {
 
   handleIt(location, marker){
 
-    if (this.focus) {this.removeMarker(this.focus)}
+    if (this.focus && this.focus !== marker && this.markers[this.focus]) {
+      this.removeMarker(this.focus)
+    }
 
     this.handleClick(location,marker)
     this.focus = marker

@@ -23,7 +23,7 @@ class FilterForm extends React.Component {
     this.setState({ selected: event.target.value });
     // debugger;
     this.props.updateFilter(event.target.value, this.state.input)
-    console.log(this.state)
+    // console.log(this.state)
 
   }
 
