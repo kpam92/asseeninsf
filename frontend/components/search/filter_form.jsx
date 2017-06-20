@@ -34,7 +34,7 @@ class FilterForm extends React.Component {
         <span className="filter">Filter results:</span>
         <br/>
         <form className ='input-text'>
-        <label>Title</label>
+        <label>Search: </label>
         <input
           type="text"
           value={this.state[this.state.selected]}

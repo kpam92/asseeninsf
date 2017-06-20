@@ -34,7 +34,7 @@ class Search extends React.Component {
       deleteFocus
     } = this.props
     return(
-      <div>
+      <div className='content'>
         <div className="user-pane">
           <div className="left-half">
             <LocationMap
