@@ -30,29 +30,35 @@ class FilterForm extends React.Component {
   render(){
 
     return(
-      <div>
-        <form className ='input-text'>
-        <label>Search: </label>
-        <input
-          type="text"
-          value={this.state[this.state.selected]}
-          onChange={this.handleChange}
-          ref={(input) => this.input = input}
-        />
+      <ul className="nav navbar-nav navbar-right">
+        <li>
+          <form className ='input-text'>
+          <label>Search: </label>
+            <input
+              type="text"
+              value={this.state[this.state.selected]}
+              onChange={this.handleChange}
+              ref={(input) => this.input = input}
+            />
+          </form>
+        </li>
+        <li>
           <div className="radio">
             <label>
               <input type="radio" value="title" checked={this.state.selected == 'title'} onChange={this.handleRadioChange}/>
               Title
             </label>
           </div>
+        </li>
+        <li>
           <div className="radio">
             <label>
               <input type="radio" value="person" checked= {this.state.selected == 'person'}  onChange={this.handleRadioChange}/>
               Person
             </label>
           </div>
-        </form>
-      </div>
+        </li>
+      </ul>
     )
   }
 }

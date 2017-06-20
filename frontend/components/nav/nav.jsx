@@ -10,17 +10,21 @@ class Nav extends React.Component {
   render(){
     const { updateFilter, removeFilter } = this.props
     return(
-      <div className='navigation-bar'>
-        <div className='title'>
-          <h1>As Seen in SF</h1>
+
+
+
+
+      <nav className="navbar navbar-default">
+        <div className="navigation-bar container-fluid">
+          <div className="navbar-header">
+            <h1>As Seen in SF</h1>
+          </div>
+            <FilterForm
+              updateFilter={updateFilter}
+              removeFilter={removeFilter}
+            />
         </div>
-        <div className='filter-form'>
-          <FilterForm
-            updateFilter={updateFilter}
-            removeFilter={removeFilter}
-          />
-        </div>
-      </div>
+      </nav>
     )
   }
 }

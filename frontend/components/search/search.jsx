@@ -35,8 +35,8 @@ class Search extends React.Component {
     } = this.props
     return(
       <div className='content'>
-        <div className="user-pane">
-          <div className="left-half">
+        <div className="user-pane row" >
+
             <LocationMap
               ref={(map) => this.map = map}
               locations={locations}
@@ -47,9 +47,9 @@ class Search extends React.Component {
               addFocus={addFocus}
               deleteFocus={deleteFocus}
               />
-          </div>
+          
           <div>
-            <div className='right-half'>
+            <div className='right-half col-sm-6'>
               <LocationIndex
                 locations={locations}
                 fetchLocationDetail={fetchLocationDetail}

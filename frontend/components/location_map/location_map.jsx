@@ -95,7 +95,7 @@ class LocationMap extends React.Component {
 
   render(){
     return (
-      <div className="map" ref="map">
+      <div className="map col-md-6" ref="map">
         Map
       </div>
     );
