@@ -31,8 +31,6 @@ class FilterForm extends React.Component {
 
     return(
       <div>
-        <span className="filter">Filter results:</span>
-        <br/>
         <form className ='input-text'>
         <label>Search: </label>
         <input

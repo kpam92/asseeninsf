@@ -294,3 +294,10 @@ hr {
 .movie-detail img {
   max-width:200px;
 }
+
+
+/*filter-form*/
+
+.radio {
+  float: right;
+}
