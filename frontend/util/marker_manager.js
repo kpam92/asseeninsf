@@ -34,7 +34,6 @@ export default class MarkerManager {
   }
 
   handleIt(location, marker){
-
     if (this.focus && this.focus !== marker && this.markers[this.focus.locationId] !== undefined) {
       this.removeMarker(this.focus)
     }
