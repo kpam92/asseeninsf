@@ -13,9 +13,12 @@ class Search extends React.Component {
   }
 
 
-  handleIndexClick(position){
+  handleIndexClick(position,id, title, release_year){
+
     var latLng = new google.maps.LatLng(position[0], position[1]);
-    this.map.map.panTo(latLng);
+    var currMarker = this.map.MarkerManager.markers[id];
+    this.map.MarkerManager.handleIt({title: title, release_year: release_year}, currMarker)
+
   }
 
   render(){

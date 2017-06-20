@@ -15,6 +15,7 @@ export default class MarkerManager {
     this.markers = {};
     this.handleClick = handleClick;
     this.focus = null
+    // this.findMarker = this.findMarker.bind(this)
 
   }
 
@@ -52,6 +53,14 @@ export default class MarkerManager {
     marker.addListener('click', () => this.handleIt(location, marker));
     this.markers[marker.locationId] = marker;
   }
+
+  // findMarker(id){
+  //
+  //   // debugger;
+  //   var result = Object.keys(this.markers)
+  //   .filter(locationId => this.markers[locationId].getPosition() == position)
+  //   return result
+  // }
 
   removeMarker(marker) {
     this.markers[marker.locationId].setMap(null);

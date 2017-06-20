@@ -13,7 +13,7 @@ class IndexItem extends React.Component {
     const { title, release_year, latitude, longitude } = this.props.location
 
     fetchLocationDetail(title, release_year)
-    this.props.handleIndexClick([latitude, longitude])
+    this.props.handleIndexClick([latitude, longitude],this.props.id, title,release_year)
   }
 
   render() {

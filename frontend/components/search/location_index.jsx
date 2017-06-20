@@ -25,6 +25,7 @@ class LocationIndex extends React.Component {
         fetchLocationDetail={fetchLocationDetail}
         handleIndexClick={handleIndexClick}
         key={location.id}
+        id={location.id}
       />
       )
     );
