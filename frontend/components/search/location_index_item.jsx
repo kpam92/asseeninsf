@@ -8,7 +8,6 @@ class IndexItem extends React.Component {
   }
 
   handleClick() {
-
     const { fetchLocationDetail } = this.props
     const { title, release_year, latitude, longitude } = this.props.location
 

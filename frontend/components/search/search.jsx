@@ -4,6 +4,7 @@ import LocationIndex from './location_index';
 import FilterForm from './filter_form';
 import LocationDetail from './location_detail';
 import LocationMap from '../location_map/location_map';
+import NavContainer from '../nav/nav_container';
 
 
 class Search extends React.Component {
@@ -53,7 +54,8 @@ class Search extends React.Component {
           </div>
 
 
-            <div className='right-half col-sm-6'>
+            <div className='col-sm-6'>
+              <NavContainer/>
               <LocationIndex
                 locations={locations}
                 fetchLocationDetail={fetchLocationDetail}
