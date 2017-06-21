@@ -14,7 +14,7 @@ import NavContainer from './nav/nav_container';
 
 
 const App = () => (
-  <div className='container-fluid'>
+  <div className='container-fluid no-left'>
 
 
       <Route exact path="/" component={ SearchContainer } />

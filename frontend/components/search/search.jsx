@@ -35,9 +35,9 @@ class Search extends React.Component {
       deleteFocus
     } = this.props
     return(
-      <div className='content container-fluid'>
+      <div className='content container-fluid no-left'>
 
-          <div className='col-sm-6'>
+          <div className='col-sm-6 no-left'>
             <LocationMap
               ref={(map) => this.map = map}
               locations={locations}
