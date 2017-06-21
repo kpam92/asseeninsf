@@ -11,7 +11,7 @@
     "npm": "2.1.x"
   },
   "scripts": {
-    "postinstall": "webpack"
+    "postinstall": "npm run build"
   },
   "keywords": [],
   "author": "",
