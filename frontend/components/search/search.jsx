@@ -34,9 +34,9 @@ class Search extends React.Component {
       deleteFocus
     } = this.props
     return(
-      <div className='content'>
-        <div className="user-pane row" >
+      <div className='content container-fluid'>
 
+          <div className='col-sm-6'>
             <LocationMap
               ref={(map) => this.map = map}
               locations={locations}
@@ -47,6 +47,10 @@ class Search extends React.Component {
               addFocus={addFocus}
               deleteFocus={deleteFocus}
               />
+            <div className='col-sm-12'>
+              <LocationDetail movie={movie}/>
+            </div>
+          </div>
 
 
             <div className='right-half col-sm-6'>
@@ -55,12 +59,9 @@ class Search extends React.Component {
                 fetchLocationDetail={fetchLocationDetail}
                 handleIndexClick={this.handleIndexClick}
               />
-            
+
           </div>
-        </div>
-        <div className='bottom-half'>
-          <LocationDetail movie={movie}/>
-        </div>
+
       </div>
 
     )

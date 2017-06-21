@@ -15,7 +15,7 @@ class Nav extends React.Component {
 
 
       <nav className="navbar navbar-default">
-        <div className="navigation-bar container-fluid">
+        <div className="container-fluid">
           <div className="navbar-header">
             <h1>As Seen in SF</h1>
           </div>
