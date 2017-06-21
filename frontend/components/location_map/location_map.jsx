@@ -65,6 +65,7 @@ class LocationMap extends React.Component {
     }
 
     componentDidUpdate() {
+
       this.MarkerManager.updateMarkers(this.props.locations);
 
     }
@@ -88,7 +89,7 @@ class LocationMap extends React.Component {
     handleMarkerClick(location, marker) {
       marker.setAnimation(google.maps.Animation.BOUNCE)
       this.props.fetchLocationDetail(location.title,location.release_year);
-
+      this.props.addFocus(location);
       this.map.panTo(marker.getPosition())
 
     }

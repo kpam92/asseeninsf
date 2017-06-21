@@ -34,6 +34,7 @@ class Search extends React.Component {
       addFocus,
       deleteFocus
     } = this.props
+    console.log(movie);
     return(
       <div className='content container-fluid no-left'>
 
@@ -48,7 +49,7 @@ class Search extends React.Component {
               addFocus={addFocus}
               deleteFocus={deleteFocus}
               />
-            <LocationDetail movie={movie}/>
+            <LocationDetail movie={movie} focus={focus}/>
           </div>
 
 
