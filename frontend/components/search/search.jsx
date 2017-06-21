@@ -47,15 +47,15 @@ class Search extends React.Component {
               addFocus={addFocus}
               deleteFocus={deleteFocus}
               />
-          
-          <div>
+
+
             <div className='right-half col-sm-6'>
               <LocationIndex
                 locations={locations}
                 fetchLocationDetail={fetchLocationDetail}
                 handleIndexClick={this.handleIndexClick}
               />
-            </div>
+            
           </div>
         </div>
         <div className='bottom-half'>
