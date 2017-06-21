@@ -48,9 +48,7 @@ class Search extends React.Component {
               addFocus={addFocus}
               deleteFocus={deleteFocus}
               />
-            <div className='col-sm-12'>
-              <LocationDetail movie={movie}/>
-            </div>
+            <LocationDetail movie={movie}/>
           </div>
 
 
