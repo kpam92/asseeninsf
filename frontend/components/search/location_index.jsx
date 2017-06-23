@@ -31,9 +31,9 @@ class LocationIndex extends React.Component {
     );
     return(
       <div className='right-half'>
-        <div>
+
          {locationIndexDetails}
-       </div>
+
      </div>
     )
   }

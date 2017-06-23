@@ -149,9 +149,9 @@
 
 .index-item-info {
   margin: 10px 10px 10px 10px;
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;*/
 }
 
 .index-item-category {

@@ -16,20 +16,27 @@ class IndexItem extends React.Component {
   }
 
   render() {
-    const { title, locations, director, release_year } = this.props.location;
+    const { title, locations, release_year } = this.props.location;
     return (
       <div
-        className="location-index-item"
+        className="location-index-item col-md-12"
         onClick={this.handleClick}
       >
-        <div className="index-item-info">
-          <span className="index-item-category">Movie:</span>
-          <span className="index-item-copy">{title}</span>
-          <span className="index-item-copy">{release_year}</span>
-          <span className="index-item-category">Director:</span>
-          <span className="index-item-copy">{director}</span>
-          <span className="index-item-category">Location:</span>
-          <span className="index-item-copy">{locations}</span>
+        <div className="index-item-info col-sm-12">
+          <div className='col-sm-6'>
+            <span className="index-item-category">Movie:</span>
+            <span className="index-item-copy">{title}</span>
+          </div>
+
+          <div className='col-sm-6'>
+            <span className="index-item-copy">{release_year}</span>
+          </div>
+          <div className='col-sm-12'>
+            <span className="index-item-category">Location:</span>
+          </div>
+          <div className='col-sm-12'>
+            <span className="index-item-copy">{locations.slice(0, locations.length - 19)}</span>
+          </div>
         </div>
       </div>
     );
