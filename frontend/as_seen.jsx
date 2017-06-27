@@ -13,16 +13,18 @@ import { addFocus, deleteFocus } from './actions/focus_actions';
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
   window.store = store;
-  window.retrieveLocations = retrieveLocations;
-  window.fetchLocations = fetchLocations;
-  window.fetchLocationDetail = fetchLocationDetail;
-  window.fetchLocationInfo = fetchLocationInfo;
-  window.receiveLocations = receiveLocations;
-  window.saveLocations = saveLocations;
-  window.updateFilter = updateFilter;
-  window.removeFilter = removeFilter;
-  window.addFocus = addFocus;
-  window.deleteFocus = deleteFocus;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });
+
+
+// window.retrieveLocations = retrieveLocations;
+// window.fetchLocations = fetchLocations;
+// window.fetchLocationDetail = fetchLocationDetail;
+// window.fetchLocationInfo = fetchLocationInfo;
+// window.receiveLocations = receiveLocations;
+// window.saveLocations = saveLocations;
+// window.updateFilter = updateFilter;
+// window.removeFilter = removeFilter;
+// window.addFocus = addFocus;
+// window.deleteFocus = deleteFocus;
