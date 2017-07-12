@@ -34,7 +34,6 @@ class Search extends React.Component {
       addFocus,
       deleteFocus
     } = this.props
-    console.log(movie);
     return(
       <div className='content container-fluid no-left'>
 
